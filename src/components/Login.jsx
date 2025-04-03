@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import '../styless/Login.css'; // Add a CSS file for styling
 
 const Login = () => {
@@ -7,29 +8,35 @@ const Login = () => {
         password: ''
     });
 
+    const navigate = useNavigate(); // Initialize the navigate function
+
     const handleChange = (e) => {
-        const { name, value } = e.target; // Destructure name and value from the event target
+        const { name, value } = e.target;
         setForm({
             ...form,
-            [name]: value // Dynamically update the state based on the input's name
+            [name]: value
         });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const { email, password } = form;
+
+        // Simple login validation (replace with real authentication logic)
         if (!email || !password) {
             alert('Please fill in all fields');
+        } else if (email === 'saiprasadkathiresan04@gmail.com' && password === '1234') {
+            alert('Login successful');
+            navigate('/first'); // Redirect to First.jsx on successful login
         } else {
-            alert('Form submitted successfully');
+            alert('Invalid email or password');
         }
     };
 
     return (
-        
         <form className="login-form" onSubmit={handleSubmit}>
-            <h2>Welcome back</h2> 
-            <h4>please enter your details</h4>
+            <h2>Welcome back</h2>
+            <h4>Please enter your details</h4>
             <label htmlFor="email">Email:</label>
             <input
                 type="email"
@@ -59,13 +66,20 @@ const Login = () => {
                 <label htmlFor="rememberMe">Remember me</label>
             </div>
             <a href="#" style={{ marginLeft: '10px', color: '#007bff', textDecoration: 'none' }}>
-                    Forgot Password?
-                </a>
+                Forgot Password?
+            </a>
             <button type="submit">Signin</button>
-            <h5>--------------    or  ---------------------</h5>
+            <h5>-------------- or ---------------------</h5>
             <div className="signup-container">
                 <span>Don't have an account?</span>
-                <a href="#" className="signup-link">
+                <a
+                    href="#"
+                    className="signup-link"
+                    onClick={(e) => {
+                        e.preventDefault(); // Prevent default anchor behavior
+                        navigate('/signup'); // Redirect to the Signup page
+                    }}
+                >
                     Signup
                 </a>
             </div>
