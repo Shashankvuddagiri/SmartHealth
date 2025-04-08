@@ -15,6 +15,9 @@ const Homepage = () => {
             <button className="btn" onClick={handleGetStarted}>
                 Get Started
             </button>
+            <footer className="footer">
+                <p>© 2025 Smart Health Management. All rights reserved.</p>
+            </footer>
         </div>
     );
 };

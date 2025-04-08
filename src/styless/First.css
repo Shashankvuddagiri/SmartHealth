@@ -1,11 +1,13 @@
+/* Container for the entire page */
 .container {
     display: flex;
     height: 100vh; /* Full height of the viewport */
 }
 
+/* Vertical Navbar */
 .vertical-navbar {
-    width: 210px;
-    background-color: #333;
+    width: 240px; /* Slightly wider for better spacing */
+    background-color: #2c3e50; /* Modern dark blue color */
     color: white;
     display: flex;
     flex-direction: column;
@@ -13,49 +15,102 @@
     position: fixed; /* Fix the navbar to the left */
     top: 0;
     left: 0;
-    height: 100%; /* Make it span the full height */
+    height: calc(100% - 50px); /* Subtract the footer height (50px) */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    overflow-y: auto; /* Enable scrolling if content overflows */
 }
 
+/* Style for Navbar Links */
+.vertical-navbar a {
+    display: block;
+    padding: 8px 12px; /* Reduced padding for smaller spacing */
+    color: white;
+    text-decoration: none;
+    background-color: #495057;
+    border-radius: 5px;
+    margin-bottom: 5px; /* Reduced margin between links */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.vertical-navbar a:hover {
+    background-color: #6c757d;
+    transform: translateX(3px); /* Slight movement on hover */
+}
+
+/* Navbar List */
 .vertical-navbar ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
+/* Navbar List Items */
 .vertical-navbar li {
-    margin: 15px 0;
+    margin: 10px 0; /* Reduced vertical spacing between items */
     cursor: pointer;
-    padding: 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    padding: 8px 12px; /* Reduced padding for smaller spacing */
+    border-radius: 6px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth hover effects */
+    font-size: 15px; /* Slightly smaller font size */
+    font-weight: 500; /* Make the text slightly bold */
+    word-wrap: break-word; /* Ensure long text wraps to the next line */
+    text-align: left; /* Align text to the left */
 }
 
+/* Hover Effect for Navbar Items */
 .vertical-navbar li:hover {
-    background-color: #444;
+    background-color: #34495e; /* Slightly lighter shade of blue */
+    transform: translateX(3px); /* Reduced movement on hover */
 }
 
+/* Active Navbar Item */
+.vertical-navbar li.active {
+    background-color: #1abc9c; /* Highlight active item with a teal color */
+    color: white;
+    font-weight: bold;
+}
+
+/* Content Section */
 .content {
-    margin-left: 210px; /* Add space to the right of the navbar */
+    margin-left: 220px; /* Add space to the right of the navbar */
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    background-color:white
+    background-color: #ecf0f1; /* Light gray background for contrast */
     position: relative;
+    flex: 1;
+    padding: 20px;
 }
 
+/* Style for Content Links */
 .patents,
 .doctors {
+    display: inline-block;
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
-    border: none;
+    text-decoration: none;
     border-radius: 4px;
-    cursor: pointer;
+    margin: 0 10px;
     transition: background-color 0.3s;
-    margin: 0 10px; /* Add spacing between the buttons */
 }
 
 .patents:hover,
 .doctors:hover {
     background-color: #0056b3;
+}
+
+/* Footer Section */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2c3e50; /* Match the navbar color */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    height: 50px; /* Set a fixed height for the footer */
 }
