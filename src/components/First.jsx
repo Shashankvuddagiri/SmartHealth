@@ -4,8 +4,10 @@ import '../styless/First.css'; // Import the CSS file for styling
 
 const First = () => {
     return (
+        
         <div className="container">
             <nav className="vertical-navbar">
+                {/* <h1>Medicines</h1> */}
                 <ul>
                     <li>
                         <Link to="/dashboard">Dashboard</Link>
@@ -36,8 +38,11 @@ const First = () => {
                     </li>
                 </ul>
             </nav>
+            
             <div className="content">
-                <Link className="patents" to="/patents">Patents</Link>
+
+                
+                <Link className="patents" to="/patents">Batches</Link>
                 <Link className="doctors" to="/institutes">Institutes</Link>
             </div>
             <footer className="footer">
