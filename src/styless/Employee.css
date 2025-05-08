@@ -1,0 +1,123 @@
+    /* Container for the entire employee page */
+    .employee-container {
+        display: flex;
+        flex-direction: row; /* Ensure navbars are side by side */
+        justify-content: space-between;
+        height: 100vh;
+        background-color: #f8f9fa;
+    }
+
+    /* Left Navbar */
+    .left-navbar {
+        flex: 1;
+        background-color: #343a40;
+        color: white;
+        padding: 20px;
+        box-shadow: 2px 0  rgba(0, 0, 0, 0.1);
+        height: 100%; /* Ensure it spans the full height */
+    }
+
+    .left-navbar ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .left-navbar li {
+        margin-bottom: 15px;
+    }
+
+    .left-navbar button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #495057;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .left-navbar button:hover {
+        background-color: #6c757d;
+    }
+
+    /* Employee Cards */
+    .employee-cards {
+        flex: 3;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 5px; /* reduce vertical spacing */
+        column-gap: 20px; /* keep horizontal spacing */
+        padding: 20px;
+        overflow-y: auto;
+        align-content: flex-start; /* prevent large spacing between rows */
+    }
+
+    /* Individual Employee Card */
+    .employee-card {
+        width: 150px;
+        height: 150px;
+        padding: 10px;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .employee-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Right Navbar */
+    .right-navbar {
+        flex: 1;
+        background-color: #343a40;
+        color: white;
+        padding: 20px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        height: 100%; /* Ensure it spans the full height */
+    }
+
+    .right-navbar ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .right-navbar li {
+        margin-bottom: 15px;
+    }
+
+    .right-navbar button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #495057;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .right-navbar button:hover {
+        background-color: #6c757d;
+    }
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #343a40;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 14px;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }

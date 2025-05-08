@@ -13,6 +13,7 @@ const Homepage = () => {
 
     return (
         <div className="homepage">
+<<<<<<< HEAD
             <div className="content-wrapper">
                 <div className="left-section">
                     <div className="icon-container">
@@ -33,6 +34,16 @@ const Homepage = () => {
                     </button>
                 </div>
             </div>
+=======
+            <h1>Welcome</h1>
+            <h2>Efficient and Smart Health Management</h2>
+            <button className="btn" onClick={handleGetStarted}>
+                Get Started
+            </button>
+            <footer className="footer">
+                <p>© 2025 Smart Health Management. All rights reserved.</p>
+            </footer>
+>>>>>>> origin/main
         </div>
     );
 };

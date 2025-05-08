@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styless/First.css';
@@ -10,6 +11,11 @@ import Reports from './Reports';
 import Employees from './Employees';
 import Ledger from './Ledger';
 import Settings from './Settings';
+=======
+import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import '../styless/First.css'; // Import the CSS file for styling
+>>>>>>> origin/main
 
 const First = () => {
     const [activeSection, setActiveSection] = useState('dashboard');
@@ -41,9 +47,12 @@ const First = () => {
     };
 
     return (
+        
         <div className="container">
             <nav className="vertical-navbar">
+                {/* <h1>Medicines</h1> */}
                 <ul>
+<<<<<<< HEAD
                     <li onClick={() => setActiveSection('dashboard')}>
                         <FontAwesomeIcon icon={faHome} /> Dashboard
                     </li>
@@ -72,7 +81,47 @@ const First = () => {
             </nav>
             <div className="main-content">
                 {renderContent()}
+=======
+                    <li>
+                        <Link to="/dashboard">Dashboard</Link>
+                    </li>
+                    <li>
+                        <Link to="/registration">Registration</Link>
+                    </li>
+                    <li>
+                        <Link to="/diagnostics">Diagnostics</Link>
+                    </li>
+                    <li>
+                        <Link to="/prescription">Prescription/Consultation</Link>
+                    </li>
+                    <li>
+                        <Link to="/first">Medicines</Link>
+                    </li>
+                    <li>
+                        <Link to="/reports">Reports</Link>
+                    </li>
+                    <li>
+                        <Link to="/employees">Employees</Link>
+                    </li>
+                    <li>
+                        <Link to="/ledger">Ledger</Link>
+                    </li>
+                    <li>
+                        <Link to="/settings">Settings</Link>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div className="content">
+
+                
+                <Link className="patents" to="/patents">Batches</Link>
+                <Link className="doctors" to="/institutes">Institutes</Link>
+>>>>>>> origin/main
             </div>
+            <footer className="footer">
+                <p>© 2025 Smart Health Management. All rights reserved.</p>
+            </footer>
         </div>
     );
 };
